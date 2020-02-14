@@ -4,7 +4,8 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "motion": "*"
+        "motion": "*",
+        "ctrlx": "*"
     },
     "files": [
         "README.md",
