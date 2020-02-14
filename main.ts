@@ -8,9 +8,11 @@ namespace handling {
         MotionLib.kinCmdBlend(kin.getName(), max - end, max - end);
         MotionLib.kinCmdMoveLinAbs(kin.getName(), [pos[0], pos[1], pos[2] + max], vel, acc, acc, 0, 0);
         MotionLib.kinCmdMoveLinAbs(kin.getName(), pos, vel, acc, acc, 0, 0);
-        // while (kin.moving()) {
-        //     common.sleep(0.001);
-        // }
-        // control.pauseUntilAxisPositionPassed(kin., 0, kin, 0)
+        // const xDir: AxisDir = current[0] - pos[0] > 0 ? AxisDir.NEGATIVE : AxisDir.POSITIVE;
+        // control.pauseUntilAxisPositionPassed(kin.getAxis(AxisMeaning.MAIN_AXIS_X), pos[0], xDir, 0);
+        // control.pauseUntilAxisPositionPassed(kin.getAxis(AxisMeaning.MAIN_AXIS_Z), pos[2], AxisDir.NEGATIVE, 0);
+        while (kin.moving()) {
+            common.sleep(0.001);
+        }
     }
 }
