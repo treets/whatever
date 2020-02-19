@@ -13,11 +13,11 @@ namespace handling {
     //% inlineInputMode=inline
     export function moveJumpAbsolute(kin: motion.Kinematic, pos: number[], vel: number, acc: number, startHeight: number, endHeight: number, maxHeight: number) {
         const current = kin.values();
-        MotionLib.kinCmdBlend(kin.getName(), maxHeight - startHeight, maxHeight - startHeight);
-        MotionLib.kinCmdMoveLinAbs(kin.getName(), [current[0], current[1], current[2] + maxHeight], vel, acc, acc, 0, 0);
-        MotionLib.kinCmdBlend(kin.getName(), maxHeight - endHeight, maxHeight - endHeight);
-        MotionLib.kinCmdMoveLinAbs(kin.getName(), [pos[0], pos[1], pos[2] + maxHeight], vel, acc, acc, 0, 0);
-        MotionLib.kinCmdMoveLinAbs(kin.getName(), pos, vel, acc, acc, 0, 0);
+        MotionLib.kinCmdBlend(kin.name, maxHeight - startHeight, maxHeight - startHeight);
+        MotionLib.kinCmdMoveLinAbs(kin.name, [current[0], current[1], current[2] + maxHeight], vel, acc, acc, 0, 0);
+        MotionLib.kinCmdBlend(kin.name, maxHeight - endHeight, maxHeight - endHeight);
+        MotionLib.kinCmdMoveLinAbs(kin.name, [pos[0], pos[1], pos[2] + maxHeight], vel, acc, acc, 0, 0);
+        MotionLib.kinCmdMoveLinAbs(kin.name, pos, vel, acc, acc, 0, 0);
         // const xDir: AxisDir = current[0] - pos[0] > 0 ? AxisDir.NEGATIVE : AxisDir.POSITIVE;
         // control.pauseUntilAxisPositionPassed(kin.getAxis(AxisMeaning.MAIN_AXIS_X), pos[0], xDir, 0);
         // control.pauseUntilAxisPositionPassed(kin.getAxis(AxisMeaning.MAIN_AXIS_Z), pos[2], AxisDir.NEGATIVE, 0);
