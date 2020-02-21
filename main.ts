@@ -22,7 +22,7 @@ namespace handling {
         // control.pauseUntilAxisPositionPassed(kin.getAxis(AxisMeaning.MAIN_AXIS_X), pos[0], xDir, 0);
         // control.pauseUntilAxisPositionPassed(kin.getAxis(AxisMeaning.MAIN_AXIS_Z), pos[2], AxisDir.NEGATIVE, 0);
         while (kin.moving()) {
-            common.sleep(0.001);
+            loops.pause(0.001);
         }
     }
 }
