@@ -12,7 +12,7 @@ namespace handling {
     //% block="jump %kin to positions %pos at %vel with %acc acceleration blending from %startHeight to %endHeight limited by %maxHeight"
     //% inlineInputMode=inline
     export function moveJumpAbsolute(kin: motion.Kinematic, pos: number[], vel: number, acc: number, startHeight: number, endHeight: number, maxHeight: number) {
-        const current = kin.values();
+        const current = kin.values;
         MotionLib.kinCmdBlend(kin.name, maxHeight - startHeight, maxHeight - startHeight);
         MotionLib.kinCmdMoveLinAbs(kin.name, [current[0], current[1], current[2] + maxHeight], vel, acc, acc, 0, 0);
         MotionLib.kinCmdBlend(kin.name, maxHeight - endHeight, maxHeight - endHeight);
