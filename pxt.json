@@ -5,10 +5,12 @@
     "dependencies": {
         "core": "*",
         "motion": "*",
-        "ctrlx": "*"
+        "ctrlx": "*",
+        "mqtt": "*"
     },
     "files": [
         "README.md",
+        "instances.ts",
         "main.ts"
     ],
     "testFiles": [
